@@ -1,5 +1,4 @@
-var test = "teste";
-
+// THIS FUNCTION DECIDES IF THE COMPUTER CHOOSES ROCK, PAPER OR SCISSOS
 function getComputerChoice () {
     var rand = Math.floor(Math.random() * 10);
     if (rand <= 3) {
@@ -10,22 +9,27 @@ function getComputerChoice () {
         return "Scissors"
 }}
 
-function playRound(playerSelection, computerSelection) {
-    // your code here!
-    prompt("Rock, scissors or paper?", "Rock");
-    if (playerSelection === "Rock" && computerSelection === "Paper") {
-        return "You lose! Paper beats Rock"
+// I PUT THE COMPUTER CHOICE FUNCTION IN A CONST BOX
+const computerSelection = getComputerChoice();
+
+// TESTING PLAYROUND FUNCTION
+function playRound(computerSelection) { 
+        if (computerSelection === "Paper") {
+        alert("You lose! Paper beats Rock")
+    } else if (computerSelection === "Rock") {
+        alert("Draw")
+    } else if (computerSelection === "Scissors") {
+        alert("You win!")
     } else {
-        return "Not rock and paper"
+        alert("Something went wrong")
     }
   }
    
-  const playerSelection = "Rock";
-  const computerSelection = getComputerChoice();
-  console.log(playRound(playerSelection, computerSelection));
+
+
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 2 ; i++) {
         // your code here!
         playRound();
      }
