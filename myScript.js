@@ -31,30 +31,42 @@ function playRound() {
   }
     
 
-function updateScore () {
+function updatePlayerScore () {
     let playRoundResults = playRound();
-    let playerScore = 0;
-    let computerScore = 0;
+    let playerScore = 0 + updatePlayerScore();
+    //let computerScore = 0 + //previous computerScore;
     if (playRoundResults === "You win! Rock beats Scissors") {
-        playerScore += 1;
-    } else  if (playRoundResults === "Draw. You and the computer choosed Rock") {
-       playerScore += 0;
-    } else if (playRoundResults === "You lose! Paper beats Rock") {
-        computerScore += 1;
+        return updatePlayerScore() + 1;
     } else {
-        alert ("Yout update function is not working!")
-    }    
-    alert (`Your score was ${playerScore}. The computer score was ${computerScore}`)
+        return updatePlayerScore();
+    }
+ }
+
+function updateComputerScore () {
+    let playRoundResults = playRound ();
+    let computerScore = 0 + updateComputerScore ();
+    if (playRoundResults === "You lose! Paper beats Rock") {
+        return updateComputerScore() + 1;
+    } else {
+        return updateComputerScore();
     }
 
+}
 
 
 function game() {
-    for (let i = 0; i < 1 ; i++) {
-        // your code here!
+    for (let i = 0; i < 2 ; i++) {
+        // your code here!]
         playRound();
+        updateComputerScore();
+        updatePlayerScore(); 
+        }
+        
      }
 }
 
 game();
-updateScore();
+//let playerFinalScore = updatePlayerScore();
+//let computerFinalScore = updateComputerScore();
+//alert (`Your score was ${playerFinalScore}. The computer socre was ${computerFinalScore}`);
+
