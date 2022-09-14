@@ -14,7 +14,7 @@ function playRound() {
     const computerSelection = getComputerChoice();
     const loseMessage = "You lose! Paper beats Rock";
     const winMessage = "You win! Rock beats Scissors";
-    const drawMessage = "Draw. You and the computer choosed Rock"
+    const drawMessage = "Draw. You and the computer chose Rock"
     const playerSelection = prompt("Rock, Paper or Scissors?", "Rock")
         if (computerSelection === "Paper" && playerSelection === "Rock") {
         alert (loseMessage);
@@ -31,41 +31,70 @@ function playRound() {
   }
     
 
-function updatePlayerScore () {
+function updatePlayerScore1() { 
+    let playerScore = 0;
     let playRoundResults = playRound();
-    let playerScore = 0 + updatePlayerScore();
-    //let computerScore = 0 + //previous computerScore;
     if (playRoundResults === "You win! Rock beats Scissors") {
-        return updatePlayerScore() + 1;
+        return playerScore + 1;
     } else {
-        return updatePlayerScore();
+        return playerScore;
     }
  }
 
-function updateComputerScore () {
-    let playRoundResults = playRound ();
-    let computerScore = 0 + updateComputerScore ();
-    if (playRoundResults === "You lose! Paper beats Rock") {
-        return updateComputerScore() + 1;
+ function updatePlayerScore2() {
+    let playerScore = updatePlayerScore1();
+    let playRoundResults = playRound();
+    if (playRoundResults === "You win! Rock beats Scissors") {
+        return playerScore + 1;
     } else {
-        return updateComputerScore();
+        return playerScore;
     }
+ }
+
+function updateComputerScore1() {
+   let playRoundResults = playRound ();
+   let computerScore = 0;
+  if (playRoundResults === "You lose! Paper beats Rock") {
+      return computerScore + 1;
+  } else {
+      return computerScore;
+  }
 
 }
 
-
-function game() {
-    for (let i = 0; i < 2 ; i++) {
-        // your code here!]
-        playRound();
-        updateComputerScore();
-        updatePlayerScore(); 
+function updateComputerScore2() {
+    let computerScore = updateComputerScore1();
+    let playRoundResults = playRound();
+        if (playRoundResults === "You win! Rock beats Scissors") {
+            return computerScore + 1;
+        } else {
+            return computerScore;
         }
-        
-     }
 }
 
-game();
+playRound();
+updatePlayerScore1();
+updateComputerScore1();
+playRound();
+updatePlayerScore2();
+updateComputerScore2();
+
+//let playerFinalScore = updatePlayerScore2();
+//let computerFinalScore = updateComputerScore2();
+
+//alert (playerFinalScore);
+
+
+//function game() {
+ //   for (let i = 0; i < 2 ; i++) {
+  //      // your code here!]
+  //      playRound();
+  //  }
+        
+     
+}
+
+//game()
 //let playerFinalScore = updatePlayerScore();
 //let computerFinalScore = updateComputerScore();
 //alert (`Your score was ${playerFinalScore}. The computer socre was ${computerFinalScore}`);
