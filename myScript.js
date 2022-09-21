@@ -1,4 +1,4 @@
-// THIS FUNCTION DECIDES IF THE COMPUTER CHOOSES ROCK, PAPER OR SCISSOS
+// THIS FUNCTION DECIDES IF THE COMPUTER CHOOSES ROCK, PAPER OR SCISSOS - THIS IS DONISH
 function getComputerChoice () {
     let rand = Math.floor(Math.random() * 10);
     if (rand <= 3) {
@@ -9,7 +9,7 @@ function getComputerChoice () {
         return "Scissors"
 }}
 
-// TESTING PLAYROUND FUNCTION
+// TESTING PLAYROUND FUNCTION - THIS IS DONISH
 function playRound() { 
     const computerSelection = getComputerChoice();
     const loseMessage = "You lose! Paper beats Rock";
@@ -29,18 +29,21 @@ function playRound() {
         alert("Something went wrong")
     }
   }
-    
+ 
+ let playRoundR = playRound(); 
 
-function updatePlayerScore1() { 
-    let playerScore = 0;
-    let playRoundResults = playRound();
-    if (playRoundResults === "You win! Rock beats Scissors") {
-        return playerScore + 1;
-    } else {
-        return playerScore;
-    }
+function updatePlayerScore1(); { 
+    /*let playerScore = 0;
+    let playRoundResults = playRound();*/
+    /*if (playRoundResults === "You win! Rock beats Scissors") {
+        playerScore+= 1;
+    }*/
+   /* return playerScore;*/
+    return 1;
  }
+let playerScore1 = updatePlayerScore1();
 
+/*
  function updatePlayerScore2() {
     let playerScore = updatePlayerScore1();
     let playRoundResults = playRound();
@@ -71,9 +74,10 @@ function updateComputerScore2() {
             return computerScore;
         }
 }
-
+*/
 playRound();
-updatePlayerScore1();
+alert(`Your score was ${playerScore1}`;)
+/*updatePlayerScore1();
 updateComputerScore1();
 playRound();
 updatePlayerScore2();
@@ -99,3 +103,4 @@ updateComputerScore2();
 //let computerFinalScore = updateComputerScore();
 //alert (`Your score was ${playerFinalScore}. The computer socre was ${computerFinalScore}`);
 
+*/
