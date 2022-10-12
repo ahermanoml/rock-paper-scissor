@@ -10,12 +10,13 @@ function getComputerChoice () {
 }}
 
 // TESTING PLAYROUND FUNCTION - THIS IS DONISH
-function playRound() { 
-    const computerSelection = getComputerChoice();
+function playRound(playerSelection, computerSelection) { 
+   /* const computerSelection = getComputerChoice(); */
+   
     const loseMessage = "You lose! Paper beats Rock";
     const winMessage = "You win! Rock beats Scissors";
     const drawMessage = "Draw. You and the computer chose Rock"
-    const playerSelection = prompt("Rock, Paper or Scissors?", "Rock")
+    //const playerSelection = prompt("Rock, Paper or Scissors?", "Rock")
         if (computerSelection === "Paper" && playerSelection === "Rock") {
         alert (loseMessage);
        return loseMessage 
@@ -29,32 +30,28 @@ function playRound() {
         alert("Something went wrong")
     }
   }
+
+
  
- let playRoundR = playRound(); 
-
-function updatePlayerScore1(); { 
-    /*let playerScore = 0;
-    let playRoundResults = playRound();*/
-    /*if (playRoundResults === "You win! Rock beats Scissors") {
-        playerScore+= 1;
-    }*/
-   /* return playerScore;*/
-    return 1;
- }
-let playerScore1 = updatePlayerScore1();
-
-/*
- function updatePlayerScore2() {
-    let playerScore = updatePlayerScore1();
+function updatePlayerScore1() { 
     let playRoundResults = playRound();
-    if (playRoundResults === "You win! Rock beats Scissors") {
-        return playerScore + 1;
-    } else {
-        return playerScore;
+    if (typeof playerScore === undefined) {
+        let playerScore = 0;
+        if (playRoundResults === "You win! Rock beats Scissors") {
+            playerScore += 1;
+        }   
     }
+    else {
+        let playerScore = 0;
+        if (playRoundResults === "You win! Rock beats Scissors") {
+            playerScore += 1;
+        }   
+    }
+   return playerScore;
  }
 
-function updateComputerScore1() {
+
+/*function updateComputerScore1() {
    let playRoundResults = playRound ();
    let computerScore = 0;
   if (playRoundResults === "You lose! Paper beats Rock") {
@@ -63,44 +60,19 @@ function updateComputerScore1() {
       return computerScore;
   }
 
+}*/
+
+function game() {
+ for (let i = 0; i < 2 ; i++) {
+     // your code here!]
+     playRound(prompt("Rock, Paper or Scissors?", "Rock"), getComputerChoice());
+ }         
 }
 
-function updateComputerScore2() {
-    let computerScore = updateComputerScore1();
-    let playRoundResults = playRound();
-        if (playRoundResults === "You win! Rock beats Scissors") {
-            return computerScore + 1;
-        } else {
-            return computerScore;
-        }
-}
-*/
-playRound();
-alert(`Your score was ${playerScore1}`;)
-/*updatePlayerScore1();
-updateComputerScore1();
-playRound();
-updatePlayerScore2();
-updateComputerScore2();
-
-//let playerFinalScore = updatePlayerScore2();
-//let computerFinalScore = updateComputerScore2();
-
-//alert (playerFinalScore);
-
-
-//function game() {
- //   for (let i = 0; i < 2 ; i++) {
-  //      // your code here!]
-  //      playRound();
-  //  }
-        
-     
-}
-
-//game()
+game();
+alert(updatePlayerScore1());
 //let playerFinalScore = updatePlayerScore();
 //let computerFinalScore = updateComputerScore();
 //alert (`Your score was ${playerFinalScore}. The computer socre was ${computerFinalScore}`);
 
-*/
+
