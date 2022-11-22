@@ -19,7 +19,7 @@ function playRound(playerSelection, computerSelection) {
     //const playerSelection = prompt("Rock, Paper or Scissors?", "Rock")
         if (computerSelection === "Paper" && playerSelection === "Rock") {
         alert (loseMessage);
-       return loseMessage 
+        return loseMessage 
     } else if (computerSelection === "Rock" && playerSelection === "Rock") {
         alert(drawMessage);
         return drawMessage 
@@ -31,21 +31,15 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-
+let playerScore = 0;
  
 function updatePlayerScore1() { 
     let playRoundResults = playRound();
-    if (typeof playerScore === undefined) {
-        let playerScore = 0;
-        if (playRoundResults === "You win! Rock beats Scissors") {
-            playerScore += 1;
-        }   
+    if (playRoundResults === "You win! Rock beats Scissors") {
+      playerScore += 1;
     }
     else {
-        let playerScore = 0;
-        if (playRoundResults === "You win! Rock beats Scissors") {
-            playerScore += 1;
-        }   
+      playerScore += 0  
     }
    return playerScore;
  }
@@ -65,7 +59,9 @@ function updatePlayerScore1() {
 function game() {
  for (let i = 0; i < 2 ; i++) {
      // your code here!]
-     playRound(prompt("Rock, Paper or Scissors?", "Rock"), getComputerChoice());
+    playRound(prompt("Rock, Paper or Scissors?", "Rock"), getComputerChoice());
+    updatePlayerScore1();
+
  }         
 }
 
