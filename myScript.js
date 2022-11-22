@@ -1,4 +1,4 @@
-// THIS FUNCTION DECIDES IF THE COMPUTER CHOOSES ROCK, PAPER OR SCISSOS - THIS IS DONISH
+// THIS FUNCTION DECIDES IF THE COMPUTER CHOOSES ROCK, PAPER OR SCISSOS 
 function getComputerChoice () {
     let rand = Math.floor(Math.random() * 10);
     if (rand <= 3) {
@@ -9,14 +9,11 @@ function getComputerChoice () {
         return "Scissors"
 }}
 
-// TESTING PLAYROUND FUNCTION - THIS IS DONISH
+// TESTING PLAYROUND FUNCTION 
 function playRound(playerSelection, computerSelection) { 
-   /* const computerSelection = getComputerChoice(); */
-   
-    const loseMessage = "You lose! Paper beats Rock";
+     const loseMessage = "You lose! Paper beats Rock";
     const winMessage = "You win! Rock beats Scissors";
     const drawMessage = "Draw. You and the computer chose Rock"
-    //const playerSelection = prompt("Rock, Paper or Scissors?", "Rock")
         if (computerSelection === "Paper" && playerSelection === "Rock") {
         alert (loseMessage);
         return loseMessage 
