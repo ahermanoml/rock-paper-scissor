@@ -11,8 +11,8 @@ function getComputerChoice () {
 
 // TESTING PLAYROUND FUNCTION 
 function playRound(playerSelection, computerSelection) { 
-    const loseMessage = "You lose! ";
-    const winMessage = "You win! ";
+    const loseMessage = "You lost!";
+    const winMessage = "You won!";
     const drawMessage = "Draw."
       if (computerSelection === "Paper" && playerSelection === "Rock") {
         alert (loseMessage);
@@ -47,24 +47,28 @@ function playRound(playerSelection, computerSelection) {
   }
 
 let playerScore = 0;
+let computerScore = 0;
  
 function updatePlayerScore1(message) { 
     let playRoundResults = message;
-    if (playRoundResults === "You win! Rock beats Scissors") {
+    if (playRoundResults === "You won!") {
       playerScore += 1;
     }
-    else {
-      playerScore += 0  
+    else if (playRoundResults === "You lost!"){
+      computerScore += 1;  
     }
-   return playerScore;
+   return {playerScore, computerScore};
 }
 
 function winner (playerScore) {
-    if (playerScore > 2) {
+    if (playerScore > computerScore) {
         return "You won the game!"
     }
-    else {
+    else if (computerScore > playerScore){
         return "You lost the game!"
+    }
+    else {
+        return "The game was a draw."
     }
 }
 
