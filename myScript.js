@@ -1,5 +1,29 @@
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', function() {
+    playRound('Rock', getComputerChoice());
+    div.innerText = "Algo aconteceu"
+});
+
+paper.addEventListener('click', function() {
+    playRound('Paper', getComputerChoice());  
+});
+
+scissors.addEventListener('click', function() {
+    playRound('Scissors', getComputerChoice());
+});
+
+let div = document.createElement('div');
+div.setAttribute('id', 'result');
+let container = document.querySelector('#container');
+container.appendChild(div);
+
+
+
 // THIS FUNCTION DECIDES IF THE COMPUTER CHOOSES ROCK, PAPER OR SCISSOS 
-function getComputerChoice () {
+ function getComputerChoice () {
     let rand = Math.floor(Math.random() * 10);
     if (rand <= 3) {
         return "Rock"
@@ -9,7 +33,9 @@ function getComputerChoice () {
         return "Scissors"
 }}
 
-// TESTING PLAYROUND FUNCTION 
+
+
+//  PLAYROUND FUNCTION 
 function playRound(playerSelection, computerSelection) { 
     const loseMessage = "You lost!";
     const winMessage = "You won!";
@@ -46,7 +72,7 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-let playerScore = 0;
+/*let playerScore = 0;
 let computerScore = 0;
  
 function updatePlayerScore1(message) { 
@@ -82,6 +108,7 @@ function game() {
 }
 
 game();
+*/
 
 /*
 let message = playRound(prompt("Rock, Paper or Scissors?", "Rock"), getComputerChoice());
