@@ -3,16 +3,18 @@ let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
 
 rock.addEventListener('click', function() {
-    playRound('Rock', getComputerChoice());
-    div.innerText = "Algo aconteceu"
+   let results =  playRound('Rock', getComputerChoice());
+    div.innerText = results;
 });
 
 paper.addEventListener('click', function() {
-    playRound('Paper', getComputerChoice());  
+    let results =  playRound('Rock', getComputerChoice());
+    div.innerText = results;
 });
 
 scissors.addEventListener('click', function() {
-    playRound('Scissors', getComputerChoice());
+    let results =  playRound('Rock', getComputerChoice());
+    div.innerText = results;
 });
 
 let div = document.createElement('div');
@@ -41,31 +43,31 @@ function playRound(playerSelection, computerSelection) {
     const winMessage = "You won!";
     const drawMessage = "Draw."
       if (computerSelection === "Paper" && playerSelection === "Rock") {
-        alert (loseMessage);
+        //alert (loseMessage);
         return loseMessage 
     } else if (computerSelection === "Rock" && playerSelection === "Rock") {
-        alert(drawMessage);
+        //alert(drawMessage);
         return drawMessage 
     } else if (computerSelection === "Scissors" && playerSelection === "Rock") {
-        alert(winMessage);
+        //alert(winMessage);
         return winMessage 
     } else if (computerSelection === "Paper" && playerSelection === "Paper") {
-        alert (drawMessage);
+        //alert (drawMessage);
         return drawMessage 
     } else if (computerSelection === "Rock" && playerSelection === "Paper") {
-        alert(winMessage);
+        //alert(winMessage);
         return winMessage 
     } else if (computerSelection === "Scissors" && playerSelection === "Paper") {
-        alert(loseMessage);
+        //alert(loseMessage);
         return loseMessage 
     } else if (computerSelection === "Paper" && playerSelection === "Scissors") {
-        alert (winMessage);
+        //alert (winMessage);
         return winMessage 
     } else if (computerSelection === "Rock" && playerSelection === "Scissors") {
-        alert(loseMessage);
+        //alert(loseMessage);
         return loseMessage 
     } else if (computerSelection === "Scissors" && playerSelection === "Scissors") {
-        alert(drawMessage);
+        //alert(drawMessage);
         return drawMessage 
     } else {
         alert("Something went wrong")
