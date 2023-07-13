@@ -2,25 +2,27 @@ let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
 
-rock.addEventListener('click', function() {
-   let results =  playRound('Rock', getComputerChoice());
-    div.innerText = results;
-});
 
-paper.addEventListener('click', function() {
-    let results =  playRound('Rock', getComputerChoice());
-    div.innerText = results;
-});
-
-scissors.addEventListener('click', function() {
-    let results =  playRound('Rock', getComputerChoice());
-    div.innerText = results;
-});
 
 let div = document.createElement('div');
 div.setAttribute('id', 'result');
 let container = document.querySelector('#container');
 container.appendChild(div);
+
+
+
+rock.addEventListener('click', function() {
+   let results =  playRound('Rock', getComputerChoice());
+    div.innerText = results;
+});
+paper.addEventListener('click', function() {
+    let results =  playRound('Paper', getComputerChoice());
+    div.innerText = results;
+});
+scissors.addEventListener('click', function() {
+    let results =  playRound('Scissors', getComputerChoice());
+    div.innerText = results;
+});
 
 
 
@@ -39,35 +41,46 @@ container.appendChild(div);
 
 //  PLAYROUND FUNCTION 
 function playRound(playerSelection, computerSelection) { 
-    const loseMessage = "You lost!";
-    const winMessage = "You won!";
-    const drawMessage = "Draw."
+    let loseMessage = "You lost!";
+    let winMessage = "You won!";
+    let drawMessage = "Draw."
       if (computerSelection === "Paper" && playerSelection === "Rock") {
         //alert (loseMessage);
+        loseMessage += ` The computer chose ${computerSelection}`
         return loseMessage 
     } else if (computerSelection === "Rock" && playerSelection === "Rock") {
         //alert(drawMessage);
+        drawMessage += ` The computer chose ${computerSelection}`
         return drawMessage 
     } else if (computerSelection === "Scissors" && playerSelection === "Rock") {
         //alert(winMessage);
+        winMessage += ` The computer chose ${computerSelection}`
         return winMessage 
+    
     } else if (computerSelection === "Paper" && playerSelection === "Paper") {
         //alert (drawMessage);
+        drawMessage += ` The computer chose ${computerSelection}`
         return drawMessage 
     } else if (computerSelection === "Rock" && playerSelection === "Paper") {
         //alert(winMessage);
+        winMessage += ` The computer chose ${computerSelection}`
         return winMessage 
     } else if (computerSelection === "Scissors" && playerSelection === "Paper") {
         //alert(loseMessage);
+        loseMessage += ` The computer chose ${computerSelection}`
         return loseMessage 
+    
     } else if (computerSelection === "Paper" && playerSelection === "Scissors") {
         //alert (winMessage);
+        winMessage += ` The computer chose ${computerSelection}`
         return winMessage 
     } else if (computerSelection === "Rock" && playerSelection === "Scissors") {
         //alert(loseMessage);
+        loseMessage += ` The computer chose ${computerSelection}`
         return loseMessage 
     } else if (computerSelection === "Scissors" && playerSelection === "Scissors") {
         //alert(drawMessage);
+        drawMessage += ` The computer chose ${computerSelection}`
         return drawMessage 
     } else {
         alert("Something went wrong")
