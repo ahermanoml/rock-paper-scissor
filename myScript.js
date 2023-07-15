@@ -3,12 +3,10 @@ let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
 
 
-
 let div = document.createElement('div');
 div.setAttribute('id', 'result');
 let container = document.querySelector('#container');
 container.appendChild(div);
-
 
 
 rock.addEventListener('click', function() {
@@ -25,13 +23,12 @@ scissors.addEventListener('click', function() {
 });
 
 
-
 // THIS FUNCTION DECIDES IF THE COMPUTER CHOOSES ROCK, PAPER OR SCISSOS 
- function getComputerChoice () {
-    let rand = Math.floor(Math.random() * 10);
-    if (rand <= 3) {
+function getComputerChoice () {
+    let rand = Math.floor(Math.random() * 3);
+    if (rand == 0) {
         return "Rock"
-    } else if (rand <= 6) {
+    } else if (rand == 1) {
         return "Paper"
     } else {
         return "Scissors"
@@ -87,11 +84,15 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-/*let playerScore = 0;
+let playerScore = 0;
 let computerScore = 0;
+let resultMessage = document.createElement('div');
+resultMessage.setAttribute('id', 'results')
+resultMessage.innerText = `The current score is ${playerScore} for you, ${computerScore} for the computer.`
+container.appendChild(resultMessage);
  
-function updatePlayerScore1(message) { 
-    let playRoundResults = message;
+function updatePlayerScore1() { 
+    let playRoundResults = playRound();
     if (playRoundResults === "You won!") {
       playerScore += 1;
     }
@@ -101,7 +102,7 @@ function updatePlayerScore1(message) {
    return {playerScore, computerScore};
 }
 
-function winner (playerScore) {
+/*function winner (playerScore) {
     if (playerScore > computerScore) {
         return "You won the game!"
     }
