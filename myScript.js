@@ -84,16 +84,38 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-let playerScore = 0;
+let gameResult = playRound;
+/*
+let playerScore = function () {
+    output = 0;
+    if (playRound () = winMessage) {
+        output += 1;
+    } 
+    return output
+}
+
 let computerScore = 0;
 let resultMessage = document.createElement('div');
 resultMessage.setAttribute('id', 'results')
 resultMessage.innerText = `The current score is ${playerScore} for you, ${computerScore} for the computer.`
 container.appendChild(resultMessage);
- 
-function updatePlayerScore1() { 
-    let playRoundResults = playRound();
-    if (playRoundResults === "You won!") {
+
+
+/*
+function updatePlayerScore1(game, score) { 
+    let output = score;
+    if (game = "You won") {
+        output += 1;
+    }
+    return output; 
+};
+
+updatePlayerScore1(gameResult, playerScore);
+
+alert (updatePlayerScore1());
+
+
+/*    if (playRoundResults === "You won!") {
       playerScore += 1;
     }
     else if (playRoundResults === "You lost!"){
