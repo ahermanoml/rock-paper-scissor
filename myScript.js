@@ -12,6 +12,7 @@ container.appendChild(div);
 rock.addEventListener('click', function() {
    let results =  playRound('Rock', getComputerChoice());
     div.innerText = results;
+    resultMessage.innerText = `The current score is ${playerScore} for you, SOMETHING for the computer.`
 });
 paper.addEventListener('click', function() {
     let results =  playRound('Paper', getComputerChoice());
@@ -84,21 +85,40 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-let gameResult = playRound;
-/*
-let playerScore = function () {
-    output = 0;
-    if (playRound () = winMessage) {
+let playerScore = null;
+
+function updatePlayerScore(n) {
+    let output = 0;
+    if (n == "ou won! The computer chose Scissors") {
         output += 1;
-    } 
+    } playerScore = output;
     return output
 }
 
-let computerScore = 0;
+
+
 let resultMessage = document.createElement('div');
 resultMessage.setAttribute('id', 'results')
-resultMessage.innerText = `The current score is ${playerScore} for you, ${computerScore} for the computer.`
 container.appendChild(resultMessage);
+
+//let computerScore = function () {
+/*
+let playerScore = function () {
+    let output = 0;
+    while (i<6) {
+        if (gameResult === "You won! The computer chose Scissors") {
+            output += 1;
+        } else {
+            output += 0;
+        }
+    }    
+    return output
+}
+
+
+
+
+
 
 
 /*
