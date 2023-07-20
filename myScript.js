@@ -12,15 +12,20 @@ container.appendChild(div);
 rock.addEventListener('click', function() {
    let results =  playRound('Rock', getComputerChoice());
     div.innerText = results;
-    resultMessage.innerText = `The current score is ${playerScore} for you, SOMETHING for the computer.`
+    updateScore(results);
+    resultMessage.innerText = `The current score is ${playerScore} for you, ${computerScore} for the computer.`
 });
 paper.addEventListener('click', function() {
     let results =  playRound('Paper', getComputerChoice());
     div.innerText = results;
+    updateScore(results);
+    resultMessage.innerText = `The current score is ${playerScore} for you, ${computerScore} for the computer.`
 });
 scissors.addEventListener('click', function() {
     let results =  playRound('Scissors', getComputerChoice());
     div.innerText = results;
+    updateScore(results);
+    resultMessage.innerText = `The current score is ${playerScore} for you, ${computerScore} for the computer.`
 });
 
 
@@ -85,16 +90,18 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-let playerScore = null;
 
-function updatePlayerScore(n) {
-    let output = 0;
-    if (n == "ou won! The computer chose Scissors") {
-        output += 1;
-    } playerScore = output;
-    return output
+let playerScore = 0;
+let computerScore = 0;
+
+
+function updateScore (game) {
+    if (game == "You won! The computer chose Scissors" || game == "You won! The computer chose Rock" || game == "You won! The computer chose Paper") {
+        playerScore++;
+    } else if (game == "You lost! The computer chose Paper" || game == "You lost! The computer chose Scissors" || game == "You lost! The computer chose Rock") {
+        computerScore++;
+    }
 }
-
 
 
 let resultMessage = document.createElement('div');
@@ -114,11 +121,6 @@ let playerScore = function () {
     }    
     return output
 }
-
-
-
-
-
 
 
 /*
